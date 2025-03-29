@@ -1,18 +1,10 @@
 import { useTitle } from "../hooks/useTitle";
 import { ProductCard } from "../components";
+import { useSelector } from "react-redux";
 
 export const Home = () => {
   useTitle("Home");
-
-  const products = [
-    {"id": 1, "name": "Sony Wh-Ch510 Bluetooth Wireless", "price": 149, "image": "/assets/images/1001.png", "amountInStock": 5},
-    {"id": 2, "name": "boAt Rockerz 450", "price": 49, "image": "/assets/images/1002.png", "amountInStock": 5},
-    {"id": 3, "name": "JBL Tune 760NC", "price": 179, "image": "/assets/images/1003.png", "amountInStock": 5},
-    {"id": 4, "name": "Logitech H111 Wired", "price": 39, "image": "/assets/images/1004.png", "amountInStock": 5},
-    {"id": 5, "name": "APPLE Airpods Max Bluetooth Headset", "price": 199, "image": "/assets/images/1005.png", "amountInStock": 5},
-    {"id": 6, "name": "ZEBRONICS Zeb-Thunder Wired", "price": 29, "image": "/assets/images/1006.png", "amountInStock": 5}
-  ]
-
+  const products = useSelector(state => state.productsState.products);
   return (
     <main>
       <section className="products">

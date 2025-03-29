@@ -15,7 +15,7 @@ const cartSlice = createSlice({
             if (founded.length > 0) {
                 updatedCartList = state.cartList.map(item =>
                     item.product.id === action.payload.id
-                        ? { ...item, count: item.count < action.payload.amountInStock ? item.count + 1 : item.count }
+                        ? { ...item, count: item.count + 1}
                         : item
                 );
             } else {
